@@ -3,34 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnchainedBeats - Music Without Chains</title>
+    <title>UnchainedBeats - Real Music, No Chains</title>
     <style>
-        body { margin:0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #111; color: #eee; }
-        header { background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding: 2rem; text-align: center; }
-        h1 { margin:0; font-size: 3rem; color: #ff4d4d; }
-        .tagline { font-size: 1.3rem; color: #aaa; margin-top: 0.5rem; }
-        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
-        .artist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .artist-card { background: #1a1a1a; border-radius: 8px; overflow: hidden; transition: transform 0.3s; }
-        .artist-card:hover { transform: translateY(-8px); }
-        .artist-card img { width: 100%; height: 200px; object-fit: cover; }
-        .info { padding: 1.2rem; }
-        .info h3 { margin: 0 0 8px 0; color: #ff4d4d; }
-        button { background: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #ff3333; }
+        :root {
+            --bg: #111;
+            --text: #eee;
+            --accent: #ff4d4d;
+        }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        header {
+            background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+            padding: 4rem 1rem 3rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.8rem;
+            margin: 0;
+            color: #ff4d4d;
+        }
+        .tagline {
+            font-size: 1.5rem;
+            color: #bbb;
+            margin-top: 0.8rem;
+        }
+        .toggle {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ff4d4d;
+            text-align: center;
+        }
+        .artists {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #1f1f1f;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 1rem;
+        }
+        .card-body h3 {
+            margin: 0 0 0.5rem 0;
+            color: #ff4d4d;
+        }
+        button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: #e63939;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #0a0a0a;
+            margin-top: 3rem;
+        }
     </style>
 </head>
 <body>
     <header>
+        <button class="toggle" onclick="toggleTheme()">Light Mode</button>
         <h1>UnchainedBeats</h1>
         <p class="tagline">Real music. Real artists. Zero middlemen.</p>
     </header>
 
     <div class="container">
-        <h2 style="text-align:center; margin-bottom:2rem;">Featured Artists</h2>
-        <div class="artist-grid">
-            <!-- Add your artist cards here later -->
+        <h2 class="section-title">Featured Artists</h2>
+        <div class="artists">
+            <div class="card">
+                <img src="https://picsum.photos/400/300?1" alt="Artist">
+                <div class="card-body">
+                    <h3>Artist Name</h3>
+                    <p>Indie Rock • 12 tracks</p>
+                    <button onclick="alert('Artist profile coming soon')">Listen Now</button>
+                </div>
+            </div>
+            <!-- Repeat more cards if you want -->
         </div>
     </div>
+
+    <footer>
+        <p>Made for independent artists • 2025</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            if (document.documentElement.style.getPropertyValue('--bg') === '#111') {
+                document.documentElement.style.setProperty('--bg', '#f8f8f8');
+                document.documentElement.style.setProperty('--text', '#111');
+                document.querySelector('.toggle').textContent = 'Dark Mode';
+            } else {
+                document.documentElement.style.setProperty('--bg', '#111');
+                document.documentElement.style.setProperty('--text', '#eee');
+                document.querySelector('.toggle').textContent = 'Light Mode';
+            }
+        }
+    </script>
 </body>
 </html>
