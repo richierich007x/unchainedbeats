@@ -1,133 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnchainedBeats</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        
-        :root {
-            --bg: #0a0a0a;
-            --card: #111;
-            --text: #e0e0e0;
-            --accent: #ff2a4d;
-        }
-        
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-        
-        header {
-            background: linear-gradient(135deg, #111, #1a1a1a);
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
-        
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        
-        nav a {
-            color: #ccc;
-            margin-left: 2rem;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 8rem 5%;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/2000/1200?random=1');
-            background-size: cover;
-            color: white;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin: 0;
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 600px;
-            margin: 1rem auto;
-        }
-        
-        .section {
-            padding: 5rem 5%;
-        }
-        
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .card {
-            background: var(--card);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-        
-        .card-content {
-            padding: 1.5rem;
-        }
-        
-        .play-btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richie_Rich007 | Unchained Beats</title>
+  <meta name="description" content="Richard Darwin Cantos Jr. — Hybrid Artist. Emo Punk, Dark Pop, Dark Country, R&B. 7 albums out now. Sweat & Sin dropping May 15, 2026." />
+  <meta property="og:title" content="Richie_Rich007 | Unchained Beats" />
+  <meta property="og:description" content="Oceanside born. Yucca Valley forged. 7 albums of raw emotion. Sweat & Sin drops May 15." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a;
+      --card: #111;
+      --red: #e63946;
+      --gold: #d4a017;
+      --text: #f0ece4;
+      --muted: #888;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.05em; }
+    .italic { font-family: 'Playfair Display', serif; font-style: italic; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+      transition: background 0.3s;
+    }
+    nav.opaque { background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--red); letter-spacing: 0.1em; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: #aaa; transition: color 0.2s; }
+    .nav-links a:hover { color: white; }
+    .nav-btn { border: 1px solid var(--red); color: var(--red); padding: 0.5rem 1.25rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; transition: all 0.2s; }
+    .nav-btn:hover { background: var(--red); color: white; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; color: white; }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.98); border-top: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 2rem; flex-direction: column; gap: 1.25rem; z-index: 99; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: #ccc; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/ZrlYaexIuhXOQvEy.png') center/cover no-repeat;
+      opacity: 0.35;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, transparent 40%, rgba(10,10,10,1) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; text-align: center; padding: 0 1rem; max-width: 900px; }
+    .hero-tag { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 1rem; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 18vw, 12rem); line-height: 0.9; color: white; }
+    .hero-title span { color: var(--red); }
+    .red-line { height: 3px; background: linear-gradient(90deg, var(--red), var(--gold), transparent); width: 80px; margin: 1.25rem auto; }
+    .hero-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: #ccc; max-width: 600px; margin: 0 auto 2rem; line-height: 1.6; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-spotify { background: #1DB954; color: white; padding: 0.85rem 2rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s; }
+    .btn-spotify:hover { transform: scale(1.05); }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.85rem 2rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .scroll-arrow { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; color: #555; font-size: 1.5rem; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* COUNTDOWN */
+    .countdown-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0f0f0f, #1a0a0a);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+    .section-tag { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); color: white; }
+    .countdown-grid { display: flex; justify-content: center; gap: 2rem; margin: 2.5rem 0; flex-wrap: wrap; }
+    .countdown-block { display: flex; flex-direction: column; align-items: center; }
+    .countdown-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--red); line-height: 1; text-shadow: 0 0 20px rgba(230,57,70,0.5); }
+    .countdown-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #666; margin-top: 0.25rem; }
+    .countdown-sep { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 6rem); color: rgba(230,57,70,0.3); line-height: 1; align-self: flex-start; margin-top: 0.1rem; }
+    .btn-presave { display: inline-block; background: linear-gradient(135deg, var(--red), #c0392b); color: white; padding: 1rem 2.5rem; border-radius: 999px; font-weight: 700; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-presave:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(230,57,70,0.4); }
+
+    /* ALBUMS */
+    .albums-section { padding: 5rem 2rem; }
+    .section-header { margin-bottom: 3rem; }
+    .album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; max-width: 1280px; margin: 0 auto; }
+    .album-card { position: relative; border-radius: 0.5rem; overflow: hidden; cursor: pointer; }
+    .album-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform 0.4s; }
+    .album-card:hover img { transform: scale(1.05); }
+    .album-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .album-card:hover .album-overlay { opacity: 1; }
+    .album-info {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem;
+      transform: translateY(10px); opacity: 0; transition: all 0.3s;
+    }
+    .album-card:hover .album-info { transform: translateY(0); opacity: 1; }
+    .album-genre { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 0.25rem; }
+    .album-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: white; margin-bottom: 0.5rem; }
+    .album-desc { font-size: 0.75rem; color: #aaa; margin-bottom: 0.75rem; line-height: 1.4; }
+    .stream-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn-stream { padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; color: white; transition: transform 0.2s; }
+    .btn-stream:hover { transform: scale(1.05); }
+    .btn-spotify-sm { background: #1DB954; }
+    .btn-apple-sm { background: #fc3c44; }
+    .album-badge { position: absolute; top: 0.75rem; left: 0.75rem; background: var(--red); color: white; font-size: 0.6rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* VIDEOS */
+    .videos-section { padding: 5rem 2rem; background: linear-gradient(135deg, #0a0a0a, #0f0a0f); }
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .filter-btn { padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid rgba(255,255,255,0.2); color: #888; background: none; cursor: pointer; transition: all 0.2s; }
+    .filter-btn.active, .filter-btn:hover { background: var(--red); color: white; border-color: var(--red); }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; max-width: 1280px; margin: 0 auto; }
+    .video-card { position: relative; border-radius: 0.5rem; overflow: hidden; background: #111; cursor: pointer; }
+    .video-card img { width: 100%; aspect-ratio: 9/16; object-fit: cover; opacity: 0.8; transition: opacity 0.3s; }
+    .video-card:hover img { opacity: 1; }
+    .video-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%); }
+    .video-play {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .video-card:hover .video-play { opacity: 1; }
+    .play-circle { width: 44px; height: 44px; border-radius: 50%; background: rgba(230,57,70,0.9); display: flex; align-items: center; justify-content: center; }
+    .play-circle svg { width: 18px; height: 18px; fill: white; margin-left: 3px; }
+    .video-meta { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.75rem; }
+    .video-title { font-size: 0.7rem; font-weight: 600; color: white; line-height: 1.3; }
+    .video-album { font-size: 0.6rem; color: var(--red); margin-top: 0.15rem; }
+    .view-all-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #FF0000; color: white; padding: 0.75rem 1.75rem; border-radius: 999px; font-weight: 600; font-size: 0.85rem; margin-top: 2rem; transition: transform 0.2s; }
+    .view-all-btn:hover { transform: scale(1.05); }
+
+    /* ABOUT */
+    .about-section { padding: 5rem 2rem; background: linear-gradient(135deg, #0f0f0f, #0a0a12); }
+    .about-content { max-width: 700px; }
+    .about-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: white; line-height: 1; margin-bottom: 1.5rem; }
+    .about-text { color: #bbb; font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+    .about-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: #888; line-height: 1.7; border-left: 3px solid var(--red); padding-left: 1.25rem; }
+
+    /* CONNECT */
+    .connect-section { padding: 5rem 2rem; text-align: center; }
+    .social-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0; }
+    .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 999px; font-weight: 600; font-size: 0.85rem; color: white; transition: transform 0.2s; }
+    .social-btn:hover { transform: scale(1.05); }
+    .btn-linktree { border: 1px solid rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 999px; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
+    .btn-linktree:hover { background: rgba(255,255,255,0.08); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; color: var(--red); }
+    .footer-copy { font-size: 0.75rem; color: #555; }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 0.75rem; color: #555; transition: color 0.2s; }
+    .footer-links a:hover { color: white; }
+
+    /* CONTAINER */
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .album-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-grid { grid-template-columns: repeat(3, 1fr); }
+      footer { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* FADE IN */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">UnchainedBeats</div>
-        <nav>
-            <a href="#">Browse</a>
-            <a href="#">For Artists</a>
-            <a href="#">Community</a>
-        </nav>
-    </header>
 
-    <div class="hero">
-        <h1>Music Without Chains</h1>
-        <p>Direct support for independent artists. No labels. No algorithms. No bullshit.</p>
+<!-- NAV -->
+<nav id="navbar">
+  <a href="/" class="nav-logo">RICHIE_RICH007</a>
+  <div class="nav-links">
+    <a href="#music">Music</a>
+    <a href="#videos">Videos</a>
+    <a href="#about">About</a>
+    <a href="#connect">Connect</a>
+    <a href="https://linktr.ee/richie_rich007" target="_blank" class="nav-btn">All Links</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#music" onclick="toggleMenu()">Music</a>
+  <a href="#videos" onclick="toggleMenu()">Videos</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#connect" onclick="toggleMenu()">Connect</a>
+  <a href="https://linktr.ee/richie_rich007" target="_blank">All Links</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Hybrid Artist</div>
+    <h1 class="hero-title font-display">RICHIE<br><span>RICH007</span></h1>
+    <div class="red-line"></div>
+    <p class="hero-quote">"Oceanside born. Yucca Valley forged. Old MP3 ghosts from when I was 16, remastered through AI fire."</p>
+    <div class="hero-btns">
+      <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-spotify">Stream on Spotify</a>
+      <a href="#music" class="btn-outline">View All Albums</a>
     </div>
+  </div>
+  <div class="scroll-arrow">↓</div>
+</section>
 
-    <div class="section">
-        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:3rem;">Featured Artists</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="https://picsum.photos/400/300?random=2" alt="">
-                <div class="card-content">
-                    <h3>Artist One</h3>
-                    <p>Alternative • 47 songs</p>
-                    <button class="play-btn">▶</button>
-                </div>
-            </div>
+<!-- COUNTDOWN -->
+<section class="countdown-section" id="countdown">
+  <div class="section-tag">New Album</div>
+  <h2 class="section-title font-display">SWEAT &amp; SIN</h2>
+  <p style="color:#888;margin-top:0.5rem;font-size:0.9rem;">Dropping May 15, 2026</p>
+  <div class="countdown-grid" id="countdown-grid">
+    <div class="countdown-block"><div class="countdown-num" id="cd-days">00</div><div class="countdown-label">Days</div></div>
+    <div class="countdown-sep font-display">:</div>
+    <div class="countdown-block"><div class="countdown-num" id="cd-hours">00</div><div class="countdown-label">Hours</div></div>
+    <div class="countdown-sep font-display">:</div>
+    <div class="countdown-block"><div class="countdown-num" id="cd-mins">00</div><div class="countdown-label">Minutes</div></div>
+    <div class="countdown-sep font-display">:</div>
+    <div class="countdown-block"><div class="countdown-num" id="cd-secs">00</div><div class="countdown-label">Seconds</div></div>
+  </div>
+  <a href="https://linktr.ee/richie_rich007" target="_blank" class="btn-presave">Pre-Save Now</a>
+</section>
+
+<!-- ALBUMS -->
+<section class="albums-section" id="music">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Discography</div>
+      <h2 class="section-title font-display">ALL ALBUMS</h2>
+      <div class="red-line" style="margin:0.75rem 0 0;"></div>
+    </div>
+    <div class="album-grid">
+      <div class="album-card fade-in">
+        <span class="album-badge">May 15</span>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/ZrlYaexIuhXOQvEy.png" alt="Sweat & Sin" loading="lazy" />
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Dance Pop</div>
+          <div class="album-name">Sweat &amp; Sin</div>
+          <div class="album-desc">The dance floor is calling. Pure heat, pure energy.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
         </div>
+      </div>
+      <div class="album-card fade-in">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/dNgkwIxqdKwwOaXp.png" alt="Feral Halos" loading="lazy" />
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Dark Pop</div>
+          <div class="album-name">Feral Halos</div>
+          <div class="album-desc">23 tracks of dark pop heaven. Every halo has a crack.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/album/7fBnfDSLLh3D3uuZ2K6q9a" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007+feral+halos" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card fade-in">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/WmuHHmaEdKEItTDl.png" alt="Let Me Whisper" loading="lazy" />
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">R&amp;B / Hip-Hop</div>
+          <div class="album-name">Let Me Whisper in Your Ears</div>
+          <div class="album-desc">Turn the lights down. 8 tracks of pure seduction.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/album/0T1D8aHv3r3bDIEK0BaB9o" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007+whisper" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card fade-in">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/pUlsFXfsnuGVOKYw.png" alt="Skin & Smoke" loading="lazy" />
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Dark Country</div>
+          <div class="album-name">Skin &amp; Smoke</div>
+          <div class="album-desc">Raw dark country. The soundtrack for your late nights.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/album/11VINO7xDH5Pof0iKjDzyw" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007+skin+smoke" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card fade-in">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/wIPOTPymQCfETQzQ.png" alt="Adventures of Tex & Fantasy" loading="lazy" />
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Hip-Hop / Dark Pop</div>
+          <div class="album-name">Adventures of Tex &amp; Fantasy</div>
+          <div class="album-desc">A wild ride through hip-hop, dark pop, and pure adventure.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/album/1fqfEVWALv14leqwZaaKRh" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007+tex+fantasy" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card fade-in">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/kDdfFniomUMhrEmB.png" alt="Trials & Tribulations" loading="lazy" />
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Storytelling / Urban</div>
+          <div class="album-name">Trials &amp; Tribulations</div>
+          <div class="album-desc">Real stories. Real life. No filter.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007+trials" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card fade-in">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/IjcyohkjwhjNkMZL.png" alt="2 Decades of Sorrow" loading="lazy" />
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Emo Punk Rock</div>
+          <div class="album-name">2 Decades of Sorrow</div>
+          <div class="album-desc">16 tracks of betrayal, booze, and bad decisions.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/album/3Pd3uismHChGjmjGFvvHIh" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007+decades+sorrow" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
+<!-- VIDEOS -->
+<section class="videos-section" id="videos">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">YouTube Shorts</div>
+      <h2 class="section-title font-display">VIDEOS</h2>
+      <div class="red-line" style="margin:0.75rem 0 0;"></div>
+    </div>
+    <div class="filter-tabs" id="filterTabs"></div>
+    <div class="video-grid" id="videoGrid"></div>
+    <div style="text-align:center;">
+      <a href="https://youtube.com/@Richie_Rich007X" target="_blank" class="view-all-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        View All on YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-content fade-in">
+      <div class="section-tag">The Artist</div>
+      <h2 class="about-name font-display">RICHARD DARWIN<br>CANTOS JR.</h2>
+      <div class="red-line" style="margin:0 0 2rem;"></div>
+      <p class="about-text">Born in Oceanside, California. Forged in the desert heat of Yucca Valley. Richard Darwin Cantos Jr. — performing as <strong style="color:white;">Richie_Rich007</strong> — is a Hybrid Artist who refuses to be boxed in by genre.</p>
+      <p class="about-text">From the raw screams of emo punk rock to the seductive whispers of R&B, from dark country honky-tonks to packed dance floors — his catalog of 7 albums covers every emotion, every story, every scar.</p>
+      <p class="about-quote">"Old MP3 ghosts from when I was 16, remastered through AI fire. This is the rawest version of me."</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect-section" id="connect">
+  <div class="container">
+    <div class="section-tag">Follow The Journey</div>
+    <h2 class="section-title font-display">STAY CONNECTED</h2>
+    <div class="red-line" style="margin:0.75rem auto 0;"></div>
+    <div class="social-grid" style="margin-top:2.5rem;">
+      <a href="https://instagram.com/richie_rich007_" target="_blank" class="social-btn" style="background:#E1306C;">📸 Instagram</a>
+      <a href="https://tiktok.com/@richie_rich007_" target="_blank" class="social-btn" style="background:#1a1a1a;border:1px solid #333;">🎵 TikTok</a>
+      <a href="https://youtube.com/@Richie_Rich007X" target="_blank" class="social-btn" style="background:#FF0000;">▶ YouTube</a>
+      <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="social-btn" style="background:#1DB954;">🎧 Spotify</a>
+      <a href="https://music.apple.com/search?term=richie+rich007" target="_blank" class="social-btn" style="background:#fc3c44;">🍎 Apple Music</a>
+    </div>
+    <a href="https://linktr.ee/richie_rich007" target="_blank" class="btn-linktree" style="display:inline-block;margin-top:1.5rem;">🔗 All Links — Linktree</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">RICHIE_RICH007</div>
+  <p class="footer-copy">© 2026 Richard Darwin Cantos Jr. | Unchained Beats | All Rights Reserved</p>
+  <div class="footer-links">
+    <a href="https://instagram.com/richie_rich007_" target="_blank">Instagram</a>
+    <a href="https://youtube.com/@Richie_Rich007X" target="_blank">YouTube</a>
+  </div>
+</footer>
+
+<script>
+// NAV scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('opaque', window.scrollY > 80);
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Countdown
+function updateCountdown() {
+  const target = new Date('2026-05-15T00:00:00').getTime();
+  const now = new Date().getTime();
+  const diff = target - now;
+  if (diff <= 0) { document.getElementById('countdown').style.display='none'; return; }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Videos
+const videos = [
+  {id:'Z4Kaz-KUsbM',title:'Halo in Flames',album:'Feral Halos'},
+  {id:'GDdmVzyqPcE',title:'Lush & Reckless',album:'Feral Halos'},
+  {id:'49WoKeaFCfE',title:'Dissolve',album:'Feral Halos'},
+  {id:'o4Eced99R9g',title:'Boots on the Dance Floor',album:'Sweat & Sin'},
+  {id:'JlAgTnU50Yk',title:'Always In You',album:'Sweat & Sin'},
+  {id:'iLRVKOcfv0M',title:'Fire on the Floor',album:'Sweat & Sin'},
+  {id:'vyVQSzET0NE',title:'Sweat & Sin Teaser',album:'Sweat & Sin'},
+  {id:'jzYHhgo8iO8',title:'My Sorrow',album:'2 Decades of Sorrow'},
+  {id:'mUzhHNgky_g',title:'No More Late Nights',album:'2 Decades of Sorrow'},
+  {id:'RkEUOTzg1QA',title:'I Wake Up Every Day',album:'2 Decades of Sorrow'},
+  {id:'LcKDPh7pyAA',title:'Fire In Your Veins',album:'Skin & Smoke'},
+  {id:'G7f-kN7jidM',title:'Your Skin on Mine',album:'Skin & Smoke'},
+  {id:'VvlC9Lyv04E',title:'Silk in the Sheets',album:'Let Me Whisper'},
+  {id:'vIZgMcShXE0',title:'Losing All Control',album:'Let Me Whisper'},
+  {id:'k8aT0Y-P34c',title:'Mocha Latte Vibes',album:'Adventures'},
+  {id:'m_yVxPI-bXk',title:'Voodoo Mercy Hexes',album:'Adventures'},
+  {id:'AMOogbAfmps',title:'Devilish Smile',album:'Trials & Tribulations'},
+  {id:'BX5YWqgfSrs',title:'Melting in My Hands',album:'Trials & Tribulations'},
+];
+const filters = ['All','Feral Halos','Sweat & Sin','2 Decades of Sorrow','Skin & Smoke','Let Me Whisper','Adventures','Trials & Tribulations'];
+let activeFilter = 'All';
+
+function renderVideos() {
+  const grid = document.getElementById('videoGrid');
+  const filtered = activeFilter === 'All' ? videos : videos.filter(v => v.album === activeFilter);
+  grid.innerHTML = filtered.map(v => `
+    <a href="https://www.youtube.com/shorts/${v.id}" target="_blank" class="video-card">
+      <img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy" />
+      <div class="video-overlay"></div>
+      <div class="video-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-meta"><div class="video-title">${v.title}</div><div class="video-album">${v.album}</div></div>
+    </a>
+  `).join('');
+}
+
+function renderFilters() {
+  const tabs = document.getElementById('filterTabs');
+  tabs.innerHTML = filters.map(f => `
+    <button class="filter-btn ${f === activeFilter ? 'active' : ''}" onclick="setFilter('${f}')">${f}</button>
+  `).join('');
+}
+
+function setFilter(f) { activeFilter = f; renderFilters(); renderVideos(); }
+renderFilters();
+renderVideos();
+
+// Fade in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
