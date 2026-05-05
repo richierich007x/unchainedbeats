@@ -49,25 +49,50 @@
     /* HERO */
     .hero {
       position: relative; min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: center;
       overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/DUByGFuOsmtObomU.png') center 15%/cover no-repeat;
-      opacity: 0.35;
+      background: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/DUByGFuOsmtObomU.png') center center/cover no-repeat;
+      opacity: 0.2;
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, transparent 40%, rgba(10,10,10,1) 100%);
+      background: linear-gradient(to right, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.85) 45%, rgba(10,10,10,0.3) 70%, rgba(10,10,10,0.1) 100%);
     }
-    .hero-content { position: relative; z-index: 1; text-align: center; padding: 0 1rem; max-width: 900px; }
+    .hero-content {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 100px 2rem 2rem;
+      gap: 2rem;
+    }
+    .hero-left { flex: 1; max-width: 560px; }
+    .hero-right {
+      flex: 0 0 auto; width: 380px; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-right img {
+      width: 100%; max-width: 360px; height: 520px;
+      object-fit: cover; object-position: center top;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
     .hero-tag { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 1rem; }
-    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 18vw, 12rem); line-height: 0.9; color: white; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 9rem); line-height: 0.9; color: white; }
     .hero-title span { color: var(--red); }
-    .red-line { height: 3px; background: linear-gradient(90deg, var(--red), var(--gold), transparent); width: 80px; margin: 1.25rem auto; }
-    .hero-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: #ccc; max-width: 600px; margin: 0 auto 2rem; line-height: 1.6; }
-    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .red-line { height: 3px; background: linear-gradient(90deg, var(--red), var(--gold), transparent); width: 80px; margin: 1.25rem 0; }
+    .hero-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: #ccc; max-width: 480px; margin: 0 0 2rem; line-height: 1.6; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .hero-content { flex-direction: column; text-align: center; padding-top: 80px; }
+      .hero-right { width: 100%; max-width: 280px; }
+      .hero-right img { height: 360px; }
+      .red-line { margin: 1.25rem auto; }
+      .hero-quote { margin: 0 auto 2rem; }
+      .hero-btns { justify-content: center; }
+    }
     .btn-spotify { background: #1DB954; color: white; padding: 0.85rem 2rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s; }
     .btn-spotify:hover { transform: scale(1.05); }
     .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.85rem 2rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
@@ -218,13 +243,18 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-tag">Hybrid Artist</div>
-    <h1 class="hero-title font-display">RICHIE<br><span>RICH007</span></h1>
-    <div class="red-line"></div>
-    <p class="hero-quote">"Oceanside born. Yucca Valley forged. Old MP3 ghosts from when I was 16, remastered through AI fire."</p>
-    <div class="hero-btns">
-      <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-spotify">Stream on Spotify</a>
-      <a href="#music" class="btn-outline">View All Albums</a>
+    <div class="hero-left">
+      <div class="hero-tag">Hybrid Artist</div>
+      <h1 class="hero-title font-display">RICHIE<br><span>RICH007</span></h1>
+      <div class="red-line"></div>
+      <p class="hero-quote">"Oceanside born. Yucca Valley forged. Old MP3 ghosts from when I was 16, remastered through AI fire."</p>
+      <div class="hero-btns">
+        <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-spotify">Stream on Spotify</a>
+        <a href="#music" class="btn-outline">View All Albums</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/DUByGFuOsmtObomU.png" alt="Richie_Rich007" />
     </div>
   </div>
   <div class="scroll-arrow">↓</div>
