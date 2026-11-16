@@ -100,6 +100,24 @@
     .scroll-arrow { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; color: #555; font-size: 1.5rem; }
     @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
+    /* COUNTDOWN */
+    .countdown-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0f0f0f, #1a0a0a);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+    .section-tag { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); color: white; }
+    .countdown-grid { display: flex; justify-content: center; gap: 2rem; margin: 2.5rem 0; flex-wrap: wrap; }
+    .countdown-block { display: flex; flex-direction: column; align-items: center; }
+    .countdown-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--red); line-height: 1; text-shadow: 0 0 20px rgba(230,57,70,0.5); }
+    .countdown-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #666; margin-top: 0.25rem; }
+    .countdown-sep { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 6rem); color: rgba(230,57,70,0.3); line-height: 1; align-self: flex-start; margin-top: 0.1rem; }
+    .btn-presave { display: inline-block; background: linear-gradient(135deg, var(--red), #c0392b); color: white; padding: 1rem 2.5rem; border-radius: 999px; font-weight: 700; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-presave:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(230,57,70,0.4); }
+
     /* ALBUMS */
     .albums-section { padding: 5rem 2rem; }
     .section-header { margin-bottom: 3rem; }
@@ -200,6 +218,7 @@
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
+<!-- updated 2026-11-16 -->
 </head>
 <body>
 
@@ -244,7 +263,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/fqwsUWmdynCLebRE.png" alt="Richie_Rich007" />
+      <img src="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="360" height="520"><rect width="100%" height="100%" fill="%23111"/><text x="50%" y="50%" fill="%23666" font-size="20" text-anchor="middle" dominant-baseline="middle">Richie_Rich007</text></svg>" alt="Richie_Rich007" />
     </div>
   </div>
   <div class="scroll-arrow">↓</div>
@@ -308,7 +327,9 @@
         </div>
       </div>
       <div class="album-card fade-in">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/ZrlYaexIuhXOQvEy.png" alt="Sweat & Sin" loading="lazy" />
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#222);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:white;text-align:center;padding:0 1rem;">SWEAT & SIN</div>
+        </div>
         <div class="album-overlay"></div>
         <div class="album-info">
           <div class="album-genre">Dance Pop</div>
@@ -321,7 +342,9 @@
         </div>
       </div>
       <div class="album-card fade-in">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/dNgkwIxqdKwwOaXp.png" alt="Feral Halos" loading="lazy" />
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#222);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:white;text-align:center;padding:0 1rem;">FERAL HALOS</div>
+        </div>
         <div class="album-overlay"></div>
         <div class="album-info">
           <div class="album-genre">Dark Pop</div>
@@ -334,7 +357,9 @@
         </div>
       </div>
       <div class="album-card fade-in">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/WmuHHmaEdKEItTDl.png" alt="Let Me Whisper" loading="lazy" />
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#222);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:white;text-align:center;padding:0 1rem;">LET ME WHISPER</div>
+        </div>
         <div class="album-overlay"></div>
         <div class="album-info">
           <div class="album-genre">R&B / Hip-Hop</div>
@@ -347,7 +372,9 @@
         </div>
       </div>
       <div class="album-card fade-in">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/pUlsFXfsnuGVOKYw.png" alt="Skin & Smoke" loading="lazy" />
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#222);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:white;text-align:center;padding:0 1rem;">SKIN & SMOKE</div>
+        </div>
         <div class="album-overlay"></div>
         <div class="album-info">
           <div class="album-genre">Dark Country</div>
@@ -360,7 +387,9 @@
         </div>
       </div>
       <div class="album-card fade-in">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/wIPOTPymQCfETQzQ.png" alt="Adventures of Tex & Fantasy" loading="lazy" />
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#222);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:white;text-align:center;padding:0 1rem;">ADVENTURES OF TEX & FANTASY</div>
+        </div>
         <div class="album-overlay"></div>
         <div class="album-info">
           <div class="album-genre">Hip-Hop / Dark Pop</div>
@@ -373,7 +402,9 @@
         </div>
       </div>
       <div class="album-card fade-in">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/kDdfFniomUMhrEmB.png" alt="Trials & Tribulations" loading="lazy" />
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#222);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:white;text-align:center;padding:0 1rem;">TRIALS & TRIBULATIONS</div>
+        </div>
         <div class="album-overlay"></div>
         <div class="album-info">
           <div class="album-genre">Storytelling / Urban</div>
@@ -386,7 +417,9 @@
         </div>
       </div>
       <div class="album-card fade-in">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/IjcyohkjwhjNkMZL.png" alt="2 Decades of Sorrow" loading="lazy" />
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#111,#222);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:white;text-align:center;padding:0 1rem;">2 DECADES OF SORROW</div>
+        </div>
         <div class="album-overlay"></div>
         <div class="album-info">
           <div class="album-genre">Emo Punk Rock</div>
@@ -507,7 +540,23 @@ function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
 
-
+// Countdown - August 14, 2026
+function updateCountdown() {
+  const target = new Date('2026-08-14T00:00:00').getTime();
+  const now = new Date().getTime();
+  const diff = target - now;
+  if (diff <= 0) { document.getElementById('countdown').style.display='none'; return; }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
 // Videos
 const videos = [
@@ -565,3 +614,4 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
+<!-- force refresh Mon Nov 16 17:45:11 UTC 2026 -->
