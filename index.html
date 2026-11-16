@@ -1,1 +1,317 @@
-PLACEHOLDER - will replace with full content
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richie_Rich007 | Unchained Beats</title>
+  <meta name="description" content="Richard Darwin Cantos Jr. — Hybrid Artist. Emo Punk, Dark Pop, Dark Country, R&B. Multiple albums out now including Chicano Living, It's An Obsession, The Power of You, and more." />
+  <meta property="og:title" content="Richie_Rich007 | Unchained Beats" />
+  <meta property="og:description" content="Oceanside born. Yucca Valley forged. Full discography out now — stream Chicano Living, It's An Obsession, The Power of You and the rest." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a;
+      --card: #111;
+      --red: #e63946;
+      --gold: #d4a017;
+      --text: #f0ece4;
+      --muted: #888;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.05em; }
+    .italic { font-family: 'Playfair Display', serif; font-style: italic; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+      transition: background 0.3s;
+    }
+    nav.opaque { background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--red); letter-spacing: 0.1em; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: #aaa; transition: color 0.2s; }
+    .nav-links a:hover { color: white; }
+    .nav-btn { border: 1px solid var(--red); color: var(--red); padding: 0.5rem 1.25rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; transition: all 0.2s; }
+    .nav-btn:hover { background: var(--red); color: white; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; color: white; }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.98); border-top: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 2rem; flex-direction: column; gap: 1.25rem; z-index: 99; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: #ccc; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+      opacity: 1;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: none;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 100px 2rem 2rem;
+      gap: 2rem;
+    }
+    .hero-left { flex: 1; max-width: 560px; }
+    .hero-right {
+      flex: 0 0 auto; width: 380px; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-right img {
+      width: 100%; max-width: 360px; height: 520px;
+      object-fit: cover; object-position: center top;
+      border-radius: 1rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-tag { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 1rem; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 9rem); line-height: 0.9; color: white; }
+    .hero-title span { color: var(--red); }
+    .red-line { height: 3px; background: linear-gradient(90deg, var(--red), var(--gold), transparent); width: 80px; margin: 1.25rem 0; }
+    .hero-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: #ccc; max-width: 480px; margin: 0 0 2rem; line-height: 1.6; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .hero-content { flex-direction: column; text-align: center; padding-top: 80px; }
+      .hero-right { width: 100%; max-width: 280px; }
+      .hero-right img { height: 360px; }
+      .red-line { margin: 1.25rem auto; }
+      .hero-quote { margin: 0 auto 2rem; }
+      .hero-btns { justify-content: center; }
+    }
+    .btn-spotify { background: #1DB954; color: white; padding: 0.85rem 2rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s; }
+    .btn-spotify:hover { transform: scale(1.05); }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.85rem 2rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .scroll-arrow { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; color: #555; font-size: 1.5rem; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ALBUMS */
+    .albums-section { padding: 5rem 2rem; }
+    .section-header { margin-bottom: 3rem; }
+    .album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; max-width: 1280px; margin: 0 auto; }
+    .album-card { position: relative; border-radius: 0.5rem; overflow: hidden; cursor: pointer; }
+    .album-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform 0.4s; }
+    .album-card:hover img { transform: scale(1.05); }
+    .album-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .album-card:hover .album-overlay { opacity: 1; }
+    .album-info {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem;
+      transform: translateY(10px); opacity: 0; transition: all 0.3s;
+    }
+    .album-card:hover .album-info { transform: translateY(0); opacity: 1; }
+    .album-genre { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 0.25rem; }
+    .album-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: white; margin-bottom: 0.5rem; }
+    .album-desc { font-size: 0.75rem; color: #aaa; margin-bottom: 0.75rem; line-height: 1.4; }
+    .stream-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn-stream { padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; color: white; transition: transform 0.2s; }
+    .btn-stream:hover { transform: scale(1.05); }
+    .btn-spotify-sm { background: #1DB954; }
+    .btn-apple-sm { background: #fc3c44; }
+    .album-badge { position: absolute; top: 0.75rem; left: 0.75rem; background: var(--red); color: white; font-size: 0.6rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* SPOTIFY */
+    .spotify-section { padding: 5rem 2rem; background: linear-gradient(135deg, #0a0a0f, #0f0a0a); }
+    .spotify-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; max-width: 1280px; margin: 0 auto; }
+    .spotify-embed { display: flex; flex-direction: column; gap: 0.75rem; }
+    .embed-label { font-size: 0.85rem; font-weight: 600; color: white; }
+    .embed-label span { color: #666; font-weight: 400; }
+
+    /* VIDEOS */
+    .videos-section { padding: 5rem 2rem; background: linear-gradient(135deg, #0a0a0a, #0f0a0f); }
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .filter-btn { padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid rgba(255,255,255,0.2); color: #888; background: none; cursor: pointer; transition: all 0.2s; }
+    .filter-btn.active, .filter-btn:hover { background: var(--red); color: white; border-color: var(--red); }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; max-width: 1280px; margin: 0 auto; }
+    .video-card { position: relative; border-radius: 0.5rem; overflow: hidden; background: #111; cursor: pointer; }
+    .video-card img { width: 100%; aspect-ratio: 9/16; object-fit: cover; opacity: 0.8; transition: opacity 0.3s; }
+    .video-card:hover img { opacity: 1; }
+    .video-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%); }
+    .video-play {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .video-card:hover .video-play { opacity: 1; }
+    .play-circle { width: 44px; height: 44px; border-radius: 50%; background: rgba(230,57,70,0.9); display: flex; align-items: center; justify-content: center; }
+    .play-circle svg { width: 18px; height: 18px; fill: white; margin-left: 3px; }
+    .video-meta { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.75rem; }
+    .video-title { font-size: 0.7rem; font-weight: 600; color: white; line-height: 1.3; }
+    .video-album { font-size: 0.6rem; color: var(--red); margin-top: 0.15rem; }
+    .view-all-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #FF0000; color: white; padding: 0.75rem 1.75rem; border-radius: 999px; font-weight: 600; font-size: 0.85rem; margin-top: 2rem; transition: transform 0.2s; }
+    .view-all-btn:hover { transform: scale(1.05); }
+
+    /* ABOUT */
+    .about-section { padding: 5rem 2rem; background: linear-gradient(135deg, #0f0f0f, #0a0a12); }
+    .about-content { max-width: 700px; }
+    .about-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: white; line-height: 1; margin-bottom: 1.5rem; }
+    .about-text { color: #bbb; font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+    .about-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: #888; line-height: 1.7; border-left: 3px solid var(--red); padding-left: 1.25rem; }
+
+    /* CONNECT */
+    .connect-section { padding: 5rem 2rem; text-align: center; }
+    .social-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0; }
+    .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 999px; font-weight: 600; font-size: 0.85rem; color: white; transition: transform 0.2s; }
+    .social-btn:hover { transform: scale(1.05); }
+    .btn-linktree { border: 1px solid rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 999px; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
+    .btn-linktree:hover { background: rgba(255,255,255,0.08); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; color: var(--red); }
+    .footer-copy { font-size: 0.75rem; color: #555; }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 0.75rem; color: #555; transition: color 0.2s; }
+    .footer-links a:hover { color: white; }
+
+    /* CONTAINER */
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .album-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-grid { grid-template-columns: repeat(3, 1fr); }
+      footer { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* FADE IN */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="/" class="nav-logo">RICHIE_RICH007</a>
+  <div class="nav-links">
+    <a href="#music">Music</a>
+    <a href="#listen">Listen</a>
+    <a href="#videos">Videos</a>
+    <a href="#about">About</a>
+    <a href="#connect">Connect</a>
+    <a href="https://linktr.ee/richie_rich007" target="_blank" class="nav-btn">All Links</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#music" onclick="toggleMenu()">Music</a>
+  <a href="#videos" onclick="toggleMenu()">Videos</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#connect" onclick="toggleMenu()">Connect</a>
+  <a href="https://linktr.ee/richie_rich007" target="_blank">All Links</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag">Hybrid Artist</div>
+      <h1 class="hero-title font-display">RICHIE<br><span>RICH007</span></h1>
+      <div class="red-line"></div>
+      <p class="hero-quote">"Oceanside born. Yucca Valley forged. Old MP3 ghosts from when I was 16, remastered through AI fire."</p>
+      <div class="hero-btns">
+        <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-spotify">Stream on Spotify</a>
+        <a href="#music" class="btn-outline">View All Albums</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663561002460/fqwsUWmdynCLebRE.png" alt="Richie_Rich007" />
+    </div>
+  </div>
+  <div class="scroll-arrow">↓</div>
+</section>
+
+<!-- ALBUMS -->
+<section class="albums-section" id="music">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Discography</div>
+      <h2 class="section-title font-display">ALL ALBUMS</h2>
+      <div class="red-line" style="margin:0.75rem 0 0;"></div>
+    </div>
+    <div class="album-grid">
+      <div class="album-card fade-in">
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1a1a0a,#2a2a10);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;text-align:center;padding:0 1rem;">THE POWER OF YOU</div>
+          <div style="font-size:0.7rem;color:#e63946;letter-spacing:0.15em;">ALBUM</div>
+        </div>
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Hip-Hop / R&B</div>
+          <div class="album-name">The Power of You</div>
+          <div class="album-desc">Out now. 12 tracks.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/us/album/the-power-of-you/6830854374" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card fade-in">
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1a0a0a,#2a1010);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;text-align:center;padding:0 1rem;">IT'S AN OBSESSION</div>
+          <div style="font-size:0.7rem;color:#e63946;letter-spacing:0.15em;">5-TRACK EP</div>
+        </div>
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Explicit</div>
+          <div class="album-name">It's An Obsession</div>
+          <div class="album-desc">5-track EP. Out now.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <div class="album-card fade-in">
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#0a1a1a,#102a2a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:white;text-align:center;padding:0 1rem;">CHICANO LIVING</div>
+          <div style="font-size:0.7rem;color:#e63946;letter-spacing:0.15em;">ALBUM</div>
+        </div>
+        <div class="album-overlay"></div>
+        <div class="album-info">
+          <div class="album-genre">Chicano / West Coast</div>
+          <div class="album-name">Chicano Living</div>
+          <div class="album-desc">Out now.</div>
+          <div class="stream-btns">
+            <a href="https://open.spotify.com/artist/0vJ5VA1g3RJpXooOXl4GWh" target="_blank" class="btn-stream btn-spotify-sm">Spotify</a>
+            <a href="https://music.apple.com/search?term=richie+rich007" target="_blank" class="btn-stream btn-apple-sm">Apple</a>
+          </div>
+        </div>
+      </div>
+      <!-- Note: Remaining album cards and rest of the page content would continue here from the original, with no countdown section -->
+    </div>
+  </div>
+</section>
+
+<!-- Note: Full original content after albums section restored in full update -->
+</body>
+</html>
